@@ -1,0 +1,112 @@
+{
+    "uri": "",
+    "$schema": "",
+    "publisher": {
+        "name": "ODLab",
+        "scheme": null,
+        "uid": null,
+        "uri": "labs.webfoundation.org"
+    },
+    "publishedDate": "constant:2014-10-28",
+    "license": "http://creativecommons.org/licenses/by/4.0/",
+    "releases": [
+        {
+            "ocid": null,
+            "releaseDate": "constant:2014-10-28",
+            "releaseTag": "constant:awardNotice",
+            "language": "constant:ind",
+            "buyer": {
+                "id": {
+                    "name": "nama_satker",
+                    "scheme": null,
+                    "uid": "kd_satker",
+                    "uri": null
+                }
+            },
+            "formationType": "constant:tender",
+            "tender": {
+                "tenderID": "kd_lelang",
+                "notice": {
+                    "id": null,
+                    "uri": null,
+                    "publishedDate": null,
+                    "isAmendment": null
+                },
+                "method": null,
+                "methodJustification": null,
+                "selectionDetails": null,
+                "procuringEntity": {
+                    "id": {
+                        "name": "nama_panitia",
+                        "scheme": null,
+                        "uid": null,
+                        "uri": null
+                    }
+                },
+                "totalValue" : {
+                    "amount" : "number:hasil_lelang",
+                    "currency" : "constant:IDR"
+                },
+                "tenderPeriod" : {
+                    "startDate" : "tgl_pengumuman",
+                    "endDate" : "tanggal_akhir_lelang"
+                }
+            },
+            "awards": [
+                {
+                    "awardID": "kd_pemenang",
+                    "notice": {
+                        "id": null,
+                        "uri": null,
+                        "publishedDate": null,
+                        "isAmendment": null,
+                        "amendment": {
+                            "amendmentDate": null,
+                            "amendedFields": null,
+                            "justification": null
+                        }
+                    },
+                    "awardDate": null,
+                    "awardValue": {
+                        "amount": "number:hps",
+                        "currency": "constant:IDR"
+                    },
+                    "suppliers": [
+                        {
+                            "id": {
+                                "name": "nama_pemenang",
+                                "scheme": null,
+                                "uid": "npwp_pemenang",
+                                "uri": null
+                            },
+                            "address": {
+                                "post-office-box": null,
+                                "extended-address": null,
+                                "street-address": null,
+                                "locality": null,
+                                "region": null,
+                                "postal-code": null,
+                                "country-name": null
+                            }
+                        }
+                    ],
+                    "itemsAwarded": [
+                        {
+                            "description": "nama_paket",
+                            "classificationScheme": null,
+                            "otherClassificationScheme": null,
+                            "classificationID": null,
+                            "classificationDescription": "kategori",
+                            "unitOfMeasure": null,
+                            "quantity": null,
+                            "valuePerUnit": {
+                                "amount": null,
+                                "currency": null
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
