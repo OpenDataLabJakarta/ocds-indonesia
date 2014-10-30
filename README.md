@@ -7,8 +7,10 @@ The mapping technique is based on [open-contracting/mapper](https://github.com/o
 
 Below is the example for running the mapping script:
 ```
-$ cd oc-mapper
-$ python mapper.py --csv-file ../lpse-procurement-2013.csv --mapping-file ../mapping-lpse-procurement.json > ../lpse-procurement-2013.json
+$ python oc-mapper/mapper.py 
+    --csv-file lpse-procurement-2013.csv
+    --mapping-file mapping-lpse-procurement.json 
+    --ocid-prefix ocds --ocid-namespace odlab > lpse-procurement-2013.json
 ```
 
 Licensing
