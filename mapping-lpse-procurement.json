@@ -14,7 +14,7 @@
             "ocid": null,
             "releaseDate": "constant:2014-10-28",
             "releaseTag": "constant:awardNotice",
-            "language": "constant:ind",
+            "language": "constant:id",
             "buyer": {
                 "id": {
                     "name": "nama_satker",
