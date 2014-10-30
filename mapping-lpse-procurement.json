@@ -11,7 +11,7 @@
     "license": "http://creativecommons.org/licenses/by/4.0/",
     "releases": [
         {
-            "ocid": null,
+            "ocid": "kd_lelang",
             "releaseDate": "constant:2014-10-28",
             "releaseTag": "constant:awardNotice",
             "language": "constant:id",
