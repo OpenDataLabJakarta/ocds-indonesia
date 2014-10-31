@@ -44,7 +44,7 @@
                     }
                 },
                 "totalValue" : {
-                    "amount" : "number:hasil_lelang",
+                    "amount" : "number:hps",
                     "currency" : "constant:IDR"
                 },
                 "tenderPeriod" : {
@@ -68,7 +68,7 @@
                     },
                     "awardDate": null,
                     "awardValue": {
-                        "amount": "number:hps",
+                        "amount": "number:hasil_lelang",
                         "currency": "constant:IDR"
                     },
                     "suppliers": [
