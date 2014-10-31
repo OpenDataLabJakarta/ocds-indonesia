@@ -201,7 +201,7 @@ def traverse(schema, csv_row, index=None, list_value=None):
         copy.deepcopy(schema)
 
 
-def process(csv_path, mapping_path):
+def process(csv_path, mapping_path, ocid_prefix, ocid_namespace):
     with open_file_path_or_url(mapping_path) as f:
         result = json.loads(f.read())
 
@@ -212,11 +212,20 @@ def process(csv_path, mapping_path):
         reader = csv.DictReader(csv_file)
         for row in reader:
             release = traverse(release_schema, csv_row=row)
+
+            # Auto-generate releaseID if not exist
             if 'releaseID' not in release:
                 release['releaseID'] = "{}-{}-{}".format(
-                    result.get('publisher', {}).get('name'),
-                    result.get('publishedDate', date.today().strftime("%Y%m%d")),  # nopep8
+                    result['publisher']['name'],
+                    date.today().strftime("%Y%m%d"),  # nopep8
                     str(uuid.uuid4()))
+
+            # Rewrite OCID with user-defined prefixes
+            release['ocid'] = "{}-{}-{}".format(
+                ocid_prefix,
+                ocid_namespace,
+                release['ocid'])
+
             result['releases'].append(release)
 
     return json.dumps(result, indent=4, ensure_ascii=False)
@@ -231,11 +240,16 @@ def main():
     parser.add_argument(
         '--mapping-file', metavar='mapping.json', type=str, required=True,
         help='the mapping used to convert the csv file')
-
+    parser.add_argument(
+        '--ocid-prefix', metavar='ocid', type=str, required=True,
+        help='the prefix agency for OCID first component')
+    parser.add_argument(
+        '--ocid-namespace', metavar='odlab', type=str, required=True,
+        help='the namespace for OCID second component')
     options = parser.parse_args()
 
-    result = process(
-        options.csv_file, options.mapping_file)
+    result = process(options.csv_file, options.mapping_file,
+        options.ocid_prefix, options.ocid_namespace)
     print(result.encode('utf-8'))
 
 
