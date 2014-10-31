@@ -7,12 +7,12 @@
         "uid": null,
         "uri": "labs.webfoundation.org"
     },
-    "publishedDate": "constant:2014-10-28",
+    "publishedDate": "constant:2014-10-31",
     "license": "http://creativecommons.org/licenses/by/4.0/",
     "releases": [
         {
             "ocid": "kd_lelang",
-            "releaseDate": "constant:2014-10-28",
+            "releaseDate": "constant:2014-10-31",
             "releaseTag": "constant:awardNotice",
             "language": "constant:id",
             "buyer": {
